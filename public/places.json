@@ -6,7 +6,7 @@
             "id": "tmp_000AE406F1190117D7404D2717FCAE17",
             "updatetime": "2023-07-24T00:00:00.000",
             "version": 0,
-            "names": "{\"key\": [\"common\"], \"value\": [[{\"key\": [\"value\", \"language\"], \"value\": [\"Гена Охранник №1 (Позывной "Крокодил")\", \"local\"]}]]}",
+            "names": "{\"key\": [\"common\"], \"value\": [[{\"key\": [\"value\", \"language\"], \"value\": [\"Гена Охранник №1 (Позывной "Крокодил")\"], \"local\"]}]]}",
             "categories": "{\"main\": \"Нашел мину\"}",
             "confidence": 0.5759733319282532,
             "websites": "[\"http://www.hmbartattic.com\"]",
