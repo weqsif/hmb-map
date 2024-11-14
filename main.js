@@ -6,16 +6,17 @@ const protocol = new pmtiles.Protocol();
 maplibregl.addProtocol("pmtiles", protocol.tile);
 
 const myMap = new maplibregl.Map({
-  container: "map",
+  container: "map", // container id
   style: {
     version: 8,
     glyphs: "https://cdn.protomaps.com/fonts/pbf/{fontstack}/{range}.pbf",
     sources: {
       protomaps: {
         type: "vector",
+        // url: `pmtiles://${mapUrl}`,
         url: `pmtiles://${location.protocol}//${location.host}${location.pathname}hmb.pmtiles`,
         attribution:
-          '<a href="https://protomaps.com">Protomaps</a> © <a href="https://openstreetmap.org">OpenStreetMap</a>',
+          '<a href="https://protomaps.com">Protomaps</a> Â© <a href="https://openstreetmap.org">OpenStreetMap</a>',
       },
     },
     layers: layers("protomaps", "light"),
@@ -24,4 +25,32 @@ const myMap = new maplibregl.Map({
 myMap.on("load", () => {
   const myBounds = myMap.getSource("protomaps").bounds;
   myMap.setMaxBounds(myBounds);
+  // Now load the places.json
+  fetch("places.json").then((response) => {
+    response.json().then((data) => {
+      data.rows.forEach((row) => {
+        const categories = JSON.parse(row.categories);
+        const catlist = [categories.main, ...(categories.alternate || [])].join(
+          ", ",
+        );
+        let color = '#000080';
+        if (/store|shop/.test(catlist)) {
+          color = '#006400';
+        }
+        if (/restaurant|cafe/.test(catlist)) {
+          color = '#FFA500';
+        };
+        const name = JSON.parse(row.names).value[0][0].value[0];
+        const marker = new maplibregl.Marker({ scale: 0.5, color: color });
+        marker
+          .setLngLat([row.longitude, row.latitude])
+          .setPopup(
+            new maplibregl.Popup().setHTML(
+              `<strong>${name}</strong><br>${catlist}`,
+            ),
+          );
+        marker.addTo(myMap);
+      });
+    });
+  });
 });
