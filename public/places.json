@@ -3,20 +3,10 @@
     "next": null,
     "rows": [
         {
-            "id": "tmp_000AE406F1190117D7404D2717FCAE17",
-            "updatetime": "2023-07-24T00:00:00.000",
-            "version": 0,
-            "names": "{\"key\": [\"common\"], \"value\": [[{\"key\": [\"value\", \"language\"], \"value\": [\"Гена Охранник №1 (Позывной 'Крокодил')\", \"local\"]}]]}",
-            "categories": "{\"main\": \"Нашел мину\"}",
-            "confidence": 0.5759733319282532,
-            "websites": "[\"http://www.hmbartattic.com\"]",
-            "socials": "[\"https://www.facebook.com/111331252227861\"]",
-            "emails": null,
-            "phones": "[\"+16503468185\"]",
-            "brand": "{\"names\": null, \"wikidata\": null}",
-            "addresses": "[{\"key\": [\"locality\", \"postcode\", \"freeform\", \"region\", \"country\"], \"value\": [\"Innopolis\", \"94019-1931\", \"Universitetskaya st. 7\", \"RoT\", \"RU\"]}]",
-            "sources": "[{\"key\": [\"dataset\", \"property\", \"recordid\"], \"value\": [\"meta\", \"\", \"111331252227861\"]}]",
-            "bbox": "{\"minx\": -122.43049, \"maxx\": -122.43049, \"miny\": 37.46352, \"maxy\": 37.46352}",
+            "id": "{\"main\": \"1\"}",
+            "timestamp": "{\"main\": \"2024-07-24 20:12:15\"}",
+            "names": "{\"key\": [\"common\"], \"value\": [[{\"key\": [\"value\", \"language\"], \"value\": [\"Охранник\"]}]]}",
+            "categories": "{\"main\": \"Скамейка, я тебя люблю...\"}",
             "geometry": {
                 "$base64": true,
                 "encoded": "AQEAAABT0O0ljZtewF6FlJ9Uu0JA"
@@ -24,6 +14,32 @@
             "type": "place",
             "latitude": 55.75158,
             "longitude": 48.75243
+        },
+        {
+            "id": "{\"main\": \"2\"}",
+            "timestamp": "{\"main\": \"2024-07-24 20:12:20\"}",
+            "names": "{\"key\": [\"common\"], \"value\": [[{\"key\": [\"value\", \"language\"], \"value\": [\"Скамья\"]}]]}",
+            "categories": "{\"main\": \"Мужик, отъебись\"}",
+            "geometry": {
+                "$base64": true,
+                "encoded": "AQAAAABT0O0ljZtewF6FlJ9Uu0JA"
+            },
+            "type": "place",
+            "latitude": 55.75227,
+            "longitude": 48.7526
+        },
+        {
+            "id": "{\"main\": \"3\"}",
+            "timestamp": "{\"main\": \"2024-07-24 20:12:25\"}",
+            "names": "{\"key\": [\"common\"], \"value\": [[{\"key\": [\"value\", \"language\"], \"value\": [\"Снегирь\"]}]]}",
+            "categories": "{\"main\": \"э\"}",
+            "geometry": {
+                "$base64": true,
+                "encoded": "AQAAAABT0O0ljZtewF6FlJ9Uu0JA"
+            },
+            "type": "place",
+            "latitude": 55.75212,
+            "longitude": 48.75184
         }
     ],
     "truncated": false
