@@ -29,19 +29,19 @@ myMap.on("load", () => {
   fetch("places.json").then((response) => {
     response.json().then((data) => {
         data.rows.forEach((row) => {            
-            const categories = JSON.parse(row.categories);
-            const catlist = [categories.main].join(
+            const message = JSON.parse(row.message);
+            const messagelist = [message.main].join(
                 ", ",
             );
-            const names = JSON.parse(row.names).value[0][0].value;
-            const nameslist = [names].join(
+            const object = JSON.parse(row.object).value;
+            const objectlist = [object].join(
                 ", ",
             );
             let color = '#FF0000';
-            if (/Охранник/.test(nameslist)) {
+            if (/Охранник/.test(objectlist)) {
                 color = '#00FF00';
             }
-        if (/Скамья/.test(nameslist)) {
+            if (/Скамья/.test(objectlist)) {
           color = '#0000FF';
             };
             const timestamp = JSON.parse(row.timestamp);
@@ -52,13 +52,15 @@ myMap.on("load", () => {
             const idlist = [id.main].join(
                 ", ",
             );
-            const idname = "ID: ";
         const marker = new maplibregl.Marker({ scale: 0.5, color: color });
         marker
           .setLngLat([row.longitude, row.latitude])
           .setPopup(
             new maplibregl.Popup().setHTML(
-                `<strong>${idname}</strong><strong>${idlist}</strong><br><strong>${timelist}</strong><br><strong>${names}</strong><br>${catlist}`,
+                `<strong>${"ID: "}</strong>${idlist}
+                <br><strong>${"TimeStamp: "}</strong>${timelist}
+                <br><strong>${"Object: "}</strong>${object}
+                <br><strong>${"Message: "}</strong>${messagelist}`,
             ),
           );
         marker.addTo(myMap);
